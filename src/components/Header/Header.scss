@@ -1,41 +1,49 @@
 @import '../../scss/variables.scss';
 
 .header {
-  max-width: 275px;
-  border: 1px solid rgb(223, 223, 223);
-  margin: 13px auto 0;
-  height: fit-content;
+  width: calc($full-width - 73px);
+  margin: 49px 0 0;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .header__link {
-  background-color: #fff;
   text-decoration: none;
   font-size: 14px;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.85);
   padding: 0 0 13px 24px;
-  margin-right: 52.5px;
-  background: url('../../images/envelope.svg') no-repeat 0 5.5px;
+  margin-right: 40px;
+  background: no-repeat 0 5px;
+  background-image: url('../../images/envelope.svg');
 
   &:last-of-type {
     margin-right: 0;
+    background-position: 12.5px 5px;
+    padding: 0 12.5px 13px 36.5px;
   }
 
   &_active {
-    color: #1890ff;
-    border-bottom: 2px solid #1890FF;
+    color: $blue-color;
+    border-bottom: 2px solid $blue-color;
+    background-image: url('../../images/envelopeBlue.svg');
+  }
+
+  &:hover {
+    // @mixin hover($opacity, $delay) {...})
+    @include hover(.7, '.3s');
   }
 }
 
-.header__link-envelope {
-  width: 14px;
-  height: 11px;
-  margin-right: 10px;
+@media screen and (min-width: 376px) {
+  .header {
+    width: calc($full-width * .8);
+  }
 }
 
-.header__link-envelope-bc {
-  background-image: url('../../images/envelope.svg');
-  
+@media screen and (min-width: 768px) {
+  .header {
+    width: calc($full-width - 150px);
+  }
 }

@@ -1,0 +1,29 @@
+@import '../../scss/variables.scss';
+
+.main {
+  margin: 37px 0 0 23px;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1, minmax($small-card-width, 100%));
+  gap: 37px;
+}
+
+@media screen and (min-width: 376px) {
+  .main {
+    margin: 28px auto;
+    grid-template-columns: repeat(1, $small-card-width);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(2, $small-card-width);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(2, $big-card-width);
+    gap: 106px 105.38px;
+  }
+}

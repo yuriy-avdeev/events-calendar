@@ -1,16 +1,14 @@
-$base-width: 100%;
-$base-height: 65px;
+$full-width: 100%;
+$small-card-width: 324px;
+$big-card-width: 353px;
 
-$b-color: #fafafa;
-
-
-$grey-color: #ccc;
-$blue-color: rgb(45, 140, 218);
+// $grey-color: #ccc;
+$blue-color: #1890ff;
 $orange-color: rgb(226, 167, 58);
 
 @mixin hover($opacity, $delay) {
   opacity: $opacity;
-  transition: opacity linear #{$delay}; // #{$delay} - ? - т.к. не одно св-во, передал строкой
+  transition: opacity linear #{$delay};
 }
 
 // расширение/наследование - ч/з директиву @extend м. наследовать наборы свойств CSS от одного селектора другому
