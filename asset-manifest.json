@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/events-calendar/static/css/main.f684db08.css",
-    "main.js": "/events-calendar/static/js/main.6b954b94.js",
+    "main.js": "/events-calendar/static/js/main.3e7732c1.js",
     "static/js/787.7efd31bd.chunk.js": "/events-calendar/static/js/787.7efd31bd.chunk.js",
     "static/media/avatar.svg": "/events-calendar/static/media/avatar.48e3ecd30731d4d4a4d6c3d2a7a0555b.svg",
     "static/media/roboto-all-500-normal.woff": "/events-calendar/static/media/roboto-all-500-normal.52cb737b682eb9661ee1.woff",
@@ -43,11 +43,11 @@
     "static/media/envelope.svg": "/events-calendar/static/media/envelope.39afc9d3a8212b4f362d.svg",
     "static/media/envelopeBlue.svg": "/events-calendar/static/media/envelopeBlue.276375dc16625c046cbd.svg",
     "main.f684db08.css.map": "/events-calendar/static/css/main.f684db08.css.map",
-    "main.6b954b94.js.map": "/events-calendar/static/js/main.6b954b94.js.map",
+    "main.3e7732c1.js.map": "/events-calendar/static/js/main.3e7732c1.js.map",
     "787.7efd31bd.chunk.js.map": "/events-calendar/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f684db08.css",
-    "static/js/main.6b954b94.js"
+    "static/js/main.3e7732c1.js"
   ]
 }
