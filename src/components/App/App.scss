@@ -2,12 +2,11 @@
 
 .app {
   width: $full-width;
-  box-sizing: border-box;
-  width: $full-width;
   max-width: 1440px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
+  box-sizing: border-box;
 }

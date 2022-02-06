@@ -1,9 +1,9 @@
 @import '../../scss/variables.scss';
 
 .card {
-  width: $small-card-width;
+  width: $full-width;
+  max-width: $big-card-width;
   height: fit-content;
-  max-height: 320px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   border-radius: 2px;
@@ -22,6 +22,9 @@
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.85);
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 
   &-bottom {
     margin: 24px 0 13.51px 24px;
@@ -34,6 +37,7 @@
   font-size: 14px;
   line-height: 1.4;
   color: $blue-color;
+  margin-left: 10px;
 
   &:hover {
     @include hover(0.8, '.3s');
@@ -42,7 +46,6 @@
 
 .card__link-image {
   position: relative;
-  left: -1px;
   height: 202px;
   overflow: hidden;
   display: flex;
@@ -55,15 +58,10 @@
 }
 
 .card__image {
-  width: calc($full-width + 2px);
+  width: $full-width;
 }
 
 @media screen and (min-width: 1024px) {
-  .card {
-    width: $big-card-width;
-    max-height: 349px;
-  }
-
   .card__text-bottom {
     margin: 24px;
   }

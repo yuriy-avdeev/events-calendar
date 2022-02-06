@@ -1,1 +1,49 @@
 @import '../../scss/variables.scss';
+
+.my-events {
+  width: calc($full-width - 51px);
+  max-width: 856px;
+  margin: 37px 28px 37px 23px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.my-events__list {
+  margin: 21px 0 13px;
+}
+
+.my-events__message {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.my-events__button {
+  cursor: pointer;
+  margin: auto;
+  width: 135px;
+  height: 24px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+
+  &:hover {
+    @include hover(0.9, '.3s');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .my-events {
+    margin: 62px auto 37px;
+  }
+
+  .my-events__list {
+    margin: 36px 0 13px;
+  }
+}

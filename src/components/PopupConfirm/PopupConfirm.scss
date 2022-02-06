@@ -1,0 +1,55 @@
+@import '../../scss/variables.scss';
+
+.confirm__container {
+  width: calc($full-width - 38px);
+  max-width: 416px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  background: #fff url('../../images/warning.svg') no-repeat;
+  background-position: 32px 32px;
+}
+
+.confirm__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 32px 32px 0 70px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.confirm__box-bottom {
+  padding: 24px 32px 24px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.confirm__button {
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  width: 57px;
+  height: 32px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  align-items: center;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+
+  &_confirm {
+    color: #fff;
+    width: 51px;
+    background: $blue-color;
+    border: none;
+  }
+}
