@@ -36,7 +36,7 @@ const EventShortInfo = ((props) => {
 
             <Link
               className='event-short__link'
-              to={`/${props.card.id}`}
+              to={`/events-calendar/${props.card.id}`}
             >
               перейти на страницу
             </Link>

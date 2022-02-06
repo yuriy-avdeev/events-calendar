@@ -5,8 +5,8 @@ import './Header.scss'
 
 
 const Header = () => {
-  const matchMainRoute = useMatch({ path: '/', end: true })
-  const matchEventItemRoute = useMatch({ path: '/:id', end: true })
+  const matchMainRoute = useMatch({ path: 'events-calendar/', end: true })
+  const matchEventItemRoute = useMatch({ path: 'events-calendar/:id', end: true })
   const [activeMainRoute, setActiveMainRoute] = React.useState(false)
 
 
@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div className='header'>
       <Link
-        to='/'
+        to='events-calendar/'
         className={`header__link ${activeMainRoute && 'header__link_active'}`}
       >
         События
@@ -32,7 +32,7 @@ const Header = () => {
 
       {/* др. вариант активной ссылки -> */}
       <NavLink
-        to='my-events'
+        to='events-calendar/my-events'
         className={({ isActive }) =>
           isActive ? 'header__link header__link_active' : 'header__link'
         }

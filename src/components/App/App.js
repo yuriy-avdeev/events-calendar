@@ -39,13 +39,13 @@ const App = () => {
         <div className='app'>
           <Header />
           <Routes>
-            <Route path='/' element={<Main />} />
+            <Route path='events-calendar/' element={<Main />} />
 
-            <Route path='/'>
+            <Route path='events-calendar/'>
               <Route path=':id' element={<EventItem />} />
             </Route>
 
-            <Route path='my-events' element={<MyEvents />} />
+            <Route path='events-calendar/my-events' element={<MyEvents />} />
 
             <Route path='*' element={<PageNotFound />} />
           </Routes>
