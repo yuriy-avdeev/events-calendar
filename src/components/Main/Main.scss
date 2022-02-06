@@ -1,29 +1,40 @@
 @import '../../scss/variables.scss';
 
 .main {
-  margin: 37px 0 0 23px;
-  width: fit-content;
+  width: calc($full-width - 51px);
+  max-width: 812px;
+  margin: 37px 28px 37px 23px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main__grid {
+  margin: 37px auto 0;
   display: grid;
-  grid-template-columns: repeat(1, minmax($small-card-width, 100%));
+  grid-template-columns: repeat(1, minmax($small-card-width, $big-card-width));
   gap: 37px;
 }
 
-@media screen and (min-width: 376px) {
-  .main {
-    margin: 28px auto;
-    grid-template-columns: repeat(1, $small-card-width);
-  }
+.main__message {
+  text-align: center;
+  margin: 80px 0;
 }
 
 @media screen and (min-width: 768px) {
   .main {
+    margin: 74px auto 37px;
+  }
+
+  .main__grid {
+    margin-top: 28px;
     grid-template-columns: repeat(2, $small-card-width);
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .main {
+  .main__grid {
     grid-template-columns: repeat(2, $big-card-width);
-    gap: 106px 105.38px;
+    gap: 105px 106px;
   }
 }

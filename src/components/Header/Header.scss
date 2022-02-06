@@ -31,14 +31,13 @@
   }
 
   &:hover {
-    // @mixin hover($opacity, $delay) {...})
-    @include hover(.7, '.3s');
+    @include hover(0.7, '.3s');
   }
 }
 
 @media screen and (min-width: 376px) {
   .header {
-    width: calc($full-width * .8);
+    width: calc($full-width * 0.8);
   }
 }
 

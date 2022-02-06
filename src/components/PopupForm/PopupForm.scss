@@ -1,0 +1,120 @@
+@import '../../scss/variables.scss';
+
+.form__container {
+  width: calc($full-width - 49px);
+  max-width: 572px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+}
+
+.form__box-header {
+  margin-bottom: 24px;
+  padding: 16px 26px 16px 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.form__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form__close {
+  margin-left: auto;
+  background-image: url('../../images/close.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 11.3px;
+  height: 11.6px;
+  cursor: pointer;
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+}
+.form__box-body {
+  margin: 0 24px;
+}
+
+.form__box {
+  margin: 0 0 28px;
+}
+
+.form__input {
+  width: $full-width;
+  padding: 4px 12px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin: 10px 0 0;
+  outline: none;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.25);
+  }
+
+  &::-ms-input-placeholder {
+    padding-left: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.form__box-bottom {
+  padding: 10px 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.form__button {
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  width: 82px;
+  height: 32px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  align-items: center;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+
+  &_submit {
+    color: #fff;
+    width: 53px;
+    background: #1890ff;
+    border: none;
+  }
+
+  &_disabled {
+    cursor: auto;
+    background-color: rgb(168, 168, 168);
+
+    &:hover {
+      @include hover(1, '1s');
+    }
+  }
+}

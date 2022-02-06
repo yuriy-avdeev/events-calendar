@@ -1,48 +1,57 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
+import './App.scss'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
 import PageNotFound from '../PageNotFound/PageNotFound'
 import MyEvents from '../MyEvents/MyEvents'
-import { getEventsList } from '../../api/mainData'
-
-import './App.scss'
+import EventItem from '../EventItem/EventItem'
+import { getEventsList } from '../../functions/api'
+import { data } from '../../utils/data'
 
 const App = () => {
+  const [localData, setLocalData] = React.useState(false)
 
   React.useEffect(() => {
     if (!localStorage.eventsList) {
       getEventsList()
-        .then((data) => {
-          localStorage.setItem('eventsList', JSON.stringify(data))
+        .then((res) => {
+          console.log('update localStorage')
+          localStorage.setItem('eventsList', JSON.stringify(res))
+          const tempArr = res.filter(card => !!card.visitors)
+          data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
+          setLocalData(true)
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.error(err))
+    } else {
+      // data.user.myEvents <- не потерять данные при вводе в адресной строке 
+      const tempArr = JSON.parse(localStorage.getItem('eventsList')).filter(card => !!card.visitors)
+      data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
+      setLocalData(true)
     }
   }, [])
 
-  console.log(JSON.parse(localStorage.getItem('eventsList')))
-
-
   return (
-    <div className="app">
-      <Header />
-      <Routes>
-        <Route
-          exact
-          path='/'
-          element={<Main />}
-        />
-        <Route
-          path='/my-events'
-          element={<MyEvents />}
-        />
-        <Route
-          path='*'
-          element={<PageNotFound />}
-        />
-      </Routes>
-    </div >
+    <>
+      {
+        localData &&
+        <div className='app'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Main />} />
+
+            <Route path='/'>
+              <Route path=':id' element={<EventItem />} />
+            </Route>
+
+            <Route path='my-events' element={<MyEvents />} />
+
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
+        </div >
+      }
+    </>
   )
 }
 

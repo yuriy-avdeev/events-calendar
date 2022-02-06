@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+
+@keyframes move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.popup {
+  opacity: 1;
+  transition: all 0.4s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: move 1s;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

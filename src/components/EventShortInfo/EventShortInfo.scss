@@ -1,0 +1,83 @@
+@import '../../scss/variables.scss';
+
+.event-short__box {
+  width: $full-width;
+  padding: 12px 8px 28px 48px;
+  background: no-repeat;
+  background-position: 0 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  border-bottom: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.event-short__title {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 4px 0;
+}
+
+.event-short__text {
+  max-width: 222px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.45);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.event-short__delete-basket {
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 28px;
+  right: 22px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+  border-radius: 2px;
+  background: no-repeat #fff center;
+  background-image: url('../../images/basket.svg');
+
+  &:hover {
+    @include hover(0.9, '.3s');
+  }
+}
+
+.event-short__box-links {
+  position: absolute;
+  top: 25px;
+  right: 8px;
+}
+
+.event-short__delete-string {
+  color: #000;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  padding: 0 8px 0 0;
+  font-size: 14px;
+  line-height: 1;
+  color: $blue-color;
+  border-right: 1px solid rgba(0, 0, 0, .06);
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+}
+
+.event-short__link {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $blue-color;
+  margin-left: 8px;
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+}
