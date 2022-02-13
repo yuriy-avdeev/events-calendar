@@ -31,7 +31,7 @@ const Main = () => {
       {
         cardsToRender.length ?
           <div className='main__grid'>
-            {cardsToRender.map(cardItem =>
+            {cardsToRender.slice(0, 6).map(cardItem =>
               <Card
                 key={cardItem.id}
                 card={cardItem}
