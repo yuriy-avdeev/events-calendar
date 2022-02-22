@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import './PopupForm.scss'
 import EventShortInfo from '../EventShortInfo/EventShortInfo'
@@ -6,12 +6,12 @@ import EventShortInfo from '../EventShortInfo/EventShortInfo'
 
 const PopupForm = (({ card, defaultName, defaultLastName, avatar, changeVisitorsList, closePopup }) => {
   // const [form, setForm] = React.useState({})
-  const [name, setName] = React.useState(defaultName)
-  const [lastName, setLastName] = React.useState(defaultLastName)
-  const [disableButton, setDisableButton] = React.useState(true)
+  const [name, setName] = useState(defaultName)
+  const [lastName, setLastName] = useState(defaultLastName)
+  const [disableButton, setDisableButton] = useState(true)
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     // name.length > 1 && lastName.length > 1 ?
     name === defaultName && lastName === defaultLastName ? // в такой логике - можно брать не из формы, а из data.user
       setDisableButton(false)

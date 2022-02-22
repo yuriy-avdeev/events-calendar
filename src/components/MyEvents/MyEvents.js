@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import './MyEvents.scss'
 import SelectArea from '../SelectArea/SelectArea'
@@ -12,34 +12,34 @@ import { removeVisitor, getList } from '../../functions/func'
 
 const MyEvents = () => {
   const resolution = window.matchMedia('(min-width: 768px)') // медиа-запрос - возвр. объект
-  const [bigScreen, setBigScreen] = React.useState(resolution.matches)
-  const [fullListThisMonth, setFullListThisMonth] = React.useState([])
-  const [listToRender, setListToRender] = React.useState([])
-  const [hiddenButton, setHiddenButton] = React.useState(true)
-  const [openPopup, setOpenPopup] = React.useState(false)
-  const [currentCard, setCurrentCard] = React.useState({})
+  const [bigScreen, setBigScreen] = useState(resolution.matches)
+  const [fullListThisMonth, setFullListThisMonth] = useState([])
+  const [listToRender, setListToRender] = useState([])
+  const [hiddenButton, setHiddenButton] = useState(true)
+  const [openPopup, setOpenPopup] = useState(false)
+  const [currentCard, setCurrentCard] = useState({})
   // console.log('data.user.myEvents -', data.user.myEvents)
   // console.log('fullListThisMonth -', fullListThisMonth)
-  // console.log('listTorender -', listToRender)
+  // console.log('listToRender -', listToRender)
   // console.log(hiddenButton)
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     setFullListThisMonth(getList(data.user.myEvents))
   }, [])
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     setListToRender(fullListThisMonth.slice(0, 3))
   }, [fullListThisMonth])
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     setHiddenButton(listToRender.length >= fullListThisMonth.length)
   }, [fullListThisMonth, listToRender])
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     resolution.onchange = () => { // переход через 768рх
       resolution.matches ? // >768 === true
         setBigScreen(true)

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import './Main.scss'
 import Card from '../Card/Card'
@@ -9,9 +9,9 @@ import { getList } from '../../functions/func'
 
 
 const Main = () => {
-  const [cardsToRender, setCardsToRender] = React.useState([])
+  const [cardsToRender, setCardsToRender] = useState([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     // setCardsToRender при 1-й загрузке (при пустом localStorage) -> после установки year, month
     data.changedMonth && getRenderList()
   }, [])

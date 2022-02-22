@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useMatch } from 'react-router-dom'
 
 import './Header.scss'
@@ -7,10 +7,10 @@ import './Header.scss'
 const Header = () => {
   const matchMainRoute = useMatch({ path: 'events-calendar/', end: true })
   const matchEventItemRoute = useMatch({ path: 'events-calendar/:id', end: true })
-  const [activeMainRoute, setActiveMainRoute] = React.useState(false)
+  const [activeMainRoute, setActiveMainRoute] = useState(false)
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     matchMainRoute ?
       setActiveMainRoute(true)
       :

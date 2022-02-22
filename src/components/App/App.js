@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import './App.scss'
@@ -11,9 +11,9 @@ import { getEventsList } from '../../functions/api'
 import { data } from '../../utils/data'
 
 const App = () => {
-  const [localData, setLocalData] = React.useState(false)
+  const [localData, setLocalData] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!localStorage.eventsList) {
       getEventsList()
         .then((res) => {
@@ -23,7 +23,7 @@ const App = () => {
           data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
           setLocalData(true)
         })
-        .catch((err) => console.error(err))
+        .catch((err) => console.log(err))
     } else {
       // data.user.myEvents <- не потерять данные при вводе в адресной строке 
       const tempArr = JSON.parse(localStorage.getItem('eventsList')).filter(card => !!card.visitors)

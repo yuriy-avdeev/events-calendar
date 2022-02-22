@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import './EventItem.scss'
@@ -11,12 +11,12 @@ import PopupConfirm from '../PopupConfirm/PopupConfirm'
 
 const EventItem = () => {
   const { id } = useParams()
-  const [card, setCard] = React.useState(JSON.parse(localStorage.getItem('eventsList')).find(c => c.id === +id))
-  const [myEvent, setMyEvent] = React.useState(false)
-  const [openPopup, setOpenPopup] = React.useState(false)
+  const [card, setCard] = useState(JSON.parse(localStorage.getItem('eventsList')).find(c => c.id === +id))
+  const [myEvent, setMyEvent] = useState(false)
+  const [openPopup, setOpenPopup] = useState(false)
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!!card.visitors) {
       setMyEvent(card.visitors.includes(data.user.name))
     } else {

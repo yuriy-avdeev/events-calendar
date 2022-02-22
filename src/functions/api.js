@@ -9,5 +9,5 @@ export const getEventsList = async () => {
   return res.ok ?
     res.json()
     :
-    Promise.reject(`код ${res.status}: ${res.statusText}`)
+    new Error(res.status)
 }

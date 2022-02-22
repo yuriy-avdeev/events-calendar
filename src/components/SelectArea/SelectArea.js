@@ -1,15 +1,15 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import './SelectArea.scss'
 import { data } from '../../utils/data'
 
 
 const SelectArea = ({ changeSelect, shift }) => {
-  const [selectedYear, setSelectedYear] = React.useState('')
-  const [selectedMonth, setSelectedMonth] = React.useState('')
+  const [selectedYear, setSelectedYear] = useState('')
+  const [selectedMonth, setSelectedMonth] = useState('')
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     const date = new Date()
     !data.changedYear && (data.changedYear = String(date.getFullYear()))
     !data.changedMonth && (data.changedMonth = String(date.getMonth() + 1)) // янв -> 1, фев -> 2...
@@ -32,13 +32,13 @@ const SelectArea = ({ changeSelect, shift }) => {
       const idx = data.months.findIndex(m => m === value)
       data.changedMonth = String(idx + 1) // янв -> 1, фев -> 2...
     }
-    
+
     changeSelect()
   }
 
 
   return (
-    <div className='select__container' style={{right: `-${shift}px`}}>
+    <div className='select__container' style={{ right: `-${shift}px` }}>
       <select
         name='year'
         className='select__form'

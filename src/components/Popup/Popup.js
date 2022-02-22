@@ -1,10 +1,9 @@
-import React from 'react'
+import { useEffect } from 'react'
 import './Popup.scss'
 
 
 const Popup = (({ closePopup, content }) => {
-  
-  React.useEffect(() => {
+  useEffect(() => {
     const handleEsc = (e) => {
       e.key === 'Escape' && closePopup()
     }
