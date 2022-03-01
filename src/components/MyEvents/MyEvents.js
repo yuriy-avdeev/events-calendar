@@ -11,7 +11,7 @@ import { removeVisitor, getList } from '../../functions/func'
 
 
 const MyEvents = () => {
-  const resolution = window.matchMedia('(min-width: 768px)') // медиа-запрос - возвр. объект
+  const resolution = window.matchMedia('(min-width: 768px)') // возвр. объект
   const [bigScreen, setBigScreen] = useState(resolution.matches)
   const [fullListThisMonth, setFullListThisMonth] = useState([])
   const [listToRender, setListToRender] = useState([])
