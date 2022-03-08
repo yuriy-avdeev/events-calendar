@@ -10,7 +10,8 @@ const SelectArea = ({ changeSelect, shift }) => {
 
 
   useEffect(() => {
-    const date = new Date()
+    // const date = new Date()
+    const date = new Date('2022-01-01T01:01:00')
     !data.changedYear && (data.changedYear = String(date.getFullYear()))
     !data.changedMonth && (data.changedMonth = String(date.getMonth() + 1)) // янв -> 1, фев -> 2...
     // let month = String(date.toLocaleString('ru', { month: 'long' }).substring(0, 3)) // -> фев

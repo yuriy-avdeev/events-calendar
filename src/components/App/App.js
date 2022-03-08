@@ -17,7 +17,7 @@ const App = () => {
     if (!localStorage.eventsList) {
       getEventsList()
         .then((res) => {
-          console.log('update localStorage')
+          // console.log('update localStorage')
           localStorage.setItem('eventsList', JSON.stringify(res))
           const tempArr = res.filter(card => !!card.visitors)
           data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
