@@ -4,7 +4,7 @@ const name = 'John Doe'
 
 export const data = {
   years: ['2021', '2022'],
-  months: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sen', 'Oct', 'Nov', 'Dec'],
   changedYear: '',
   changedMonth: '',
   user: {

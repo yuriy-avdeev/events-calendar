@@ -8,7 +8,7 @@ const Card = ({ card }) => {
         <h3 className='card__text'>
           {card.title}
         </h3>
-        <Link className='card__link' to={`${card.id}`}>Больше</Link>
+        <Link className='card__link' to={`${card.id}`}>More</Link>
       </div>
 
       <Link className='card__link-image' to={`${card.id}`}>

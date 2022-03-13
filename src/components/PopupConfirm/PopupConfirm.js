@@ -13,7 +13,7 @@ const PopupConfirm = (({ changeVisitorsList, closePopup }) => {
 
   return (
     <div className='confirm__container'>
-      <h2 className='confirm__title'>Вы уверены, что хотите отказаться?</h2>
+      <h2 className='confirm__title'>Are you sure you want to cancel?</h2>
 
       <div className='confirm__box-bottom'>
         <button
@@ -21,7 +21,7 @@ const PopupConfirm = (({ changeVisitorsList, closePopup }) => {
           type='button'
           onClick={clickNo}
         >
-          НЕТ
+          NO
         </button>
 
         <button
@@ -29,7 +29,7 @@ const PopupConfirm = (({ changeVisitorsList, closePopup }) => {
           type='button'
           onClick={clickYes}
         >
-          ДА
+          YES
         </button>
       </div>
     </div>

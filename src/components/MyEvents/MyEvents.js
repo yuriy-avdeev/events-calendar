@@ -120,7 +120,7 @@ const MyEvents = () => {
               )}
           </div>
           :
-          <h4 className='my-events__message'>У Вас нет мероприятий в этом месяце!</h4>
+          <h4 className='my-events__message'>You have no events this month!</h4>
       }
 
       {listToRender.length && !hiddenButton ?
@@ -129,7 +129,7 @@ const MyEvents = () => {
           onClick={addCardsToRender}
           disabled={hiddenButton}
         >
-          загрузить больше
+          load more
         </button>
         :
         null}

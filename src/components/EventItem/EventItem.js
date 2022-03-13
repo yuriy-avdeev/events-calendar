@@ -87,20 +87,20 @@ const EventItem = () => {
               className='event__content-button event__content-button_red'
               onClick={() => setOpenPopup(true)}
             >
-              Отказаться
+              Cancel
             </button>
             :
             <button
               className='event__content-button'
               onClick={() => setOpenPopup(true)}
             >
-              &gt; Записаться
+              &gt; Sign up
             </button>
         }
       </div>
 
       <div className='event__box-bottom'>
-        <h4 className='event__bottom-title'>Посетители</h4>
+        <h4 className='event__bottom-title'>Visitors</h4>
         <ul className='event__bottom-list'>
           <li>
             {
@@ -111,7 +111,7 @@ const EventItem = () => {
                       <p className='event__bottom-visitors' key={visitor}>{visitor}</p>
                   )
                 :
-                <p className='event__bottom-visitors'>пока никто не записан</p>
+                <p className='event__bottom-visitors'>No one signed up yet</p>
             }
           </li>
         </ul>

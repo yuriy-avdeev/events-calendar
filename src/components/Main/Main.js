@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import './Main.scss'
 import Card from '../Card/Card'
 import SelectArea from '../SelectArea/SelectArea'
-
 import { data } from '../../utils/data'
 import { getList } from '../../functions/func'
 
@@ -39,7 +38,7 @@ const Main = () => {
             )}
           </div>
           :
-          <h3 className='main__message'>Событий в этом месяце нет!</h3>
+          <h3 className='main__message'>No events this month!</h3>
       }
     </div>
 

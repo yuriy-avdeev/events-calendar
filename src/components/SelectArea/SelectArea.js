@@ -14,8 +14,8 @@ const SelectArea = ({ changeSelect, shift }) => {
     const date = new Date('2022-01-01T01:01:00')
     !data.changedYear && (data.changedYear = String(date.getFullYear()))
     !data.changedMonth && (data.changedMonth = String(date.getMonth() + 1)) // янв -> 1, фев -> 2...
-    // let month = String(date.toLocaleString('ru', { month: 'long' }).substring(0, 3)) // -> фев
-    // data.changedMonth = month[0].toUpperCase() + month.slice(1) // -> Фев
+    // let month = String(date.toLocaleString('en', { month: 'long' }).substring(0, 3)) // -> feb
+    // data.changedMonth = month[0].toUpperCase() + month.slice(1) // -> Feb
     setSelectedYear(data.changedYear)
     setSelectedMonth(data.months[+data.changedMonth - 1])
   }, [])

@@ -27,7 +27,7 @@ const Header = () => {
         to='events-calendar/'
         className={`header__link ${activeMainRoute && 'header__link_active'}`}
       >
-        События
+        Events
       </Link>
 
       {/* др. вариант активной ссылки -> */}
@@ -37,7 +37,7 @@ const Header = () => {
           isActive ? 'header__link header__link_active' : 'header__link'
         }
       >
-        Календарь
+        Calendar
       </NavLink>
     </div >
   )

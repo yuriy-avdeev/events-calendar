@@ -50,7 +50,7 @@ const PopupForm = (({ card, defaultName, defaultLastName, avatar, changeVisitors
   return (
     <div className='form__container'>
       <div className='form__box-header'>
-        <h2 className='form__title'>Записаться на событие</h2>
+        <h2 className='form__title'>Sign up for an event</h2>
         <button className='form__close' onClick={closePopup}></button>
       </div>
 
@@ -86,7 +86,7 @@ const PopupForm = (({ card, defaultName, defaultLastName, avatar, changeVisitors
 
       <div className='form__box-bottom'>
         <button className='form__button' type='button' onClick={cancelInput}>
-          ОТМЕНА
+          CANCEL
         </button>
 
         <button

@@ -8,12 +8,12 @@ const EventShortInfo = ((props) => {
   }
 
   return (
-    <div
-      className='event-short__box'
-      style={{ backgroundImage: `url(${props.avatar})` }}
-    >
-      <h2 className='event-short__title'>{props.card.title}</h2>
-      <p className='event-short__text'>{props.card.description}</p>
+    <div className='event-short__box'>
+      <img className='event-short__avatar'src={props.avatar} alt='avatar' />
+      <div className='event-short__text-box'>
+        <h2 className='event-short__title'>{props.card.title}</h2>
+        <p className='event-short__text'>{props.card.description}</p>
+      </div>
 
       {/* ниже -> для компонента MyEvents */}
       {
@@ -30,14 +30,14 @@ const EventShortInfo = ((props) => {
               className='event-short__delete-string'
               onClick={handleClickRemove}
             >
-              удалить
+              delete
             </button>
 
             <Link
               className='event-short__link'
               to={`/events-calendar/${props.card.id}`}
             >
-              перейти на страницу
+              go to page
             </Link>
           </div>
       }

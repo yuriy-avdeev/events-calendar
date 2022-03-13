@@ -1,16 +1,16 @@
 @import '../../scss/variables.scss';
 
 .main {
-  width: calc($full-width - 51px);
   max-width: 812px;
-  margin: 37px 28px 37px 23px;
+  margin: 40px auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 .main__grid {
-  margin: 37px auto 0;
+  width: calc($full-width - 20px);
+  margin: 30px auto;
   display: grid;
   grid-template-columns: repeat(1, minmax($small-card-width, $big-card-width));
   gap: 37px;
@@ -35,6 +35,6 @@
 @media screen and (min-width: 1024px) {
   .main__grid {
     grid-template-columns: repeat(2, $big-card-width);
-    gap: 105px 106px;
+    gap: 55px;
   }
 }
