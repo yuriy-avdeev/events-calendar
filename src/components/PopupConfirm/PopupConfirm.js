@@ -1,7 +1,7 @@
 import './PopupConfirm.scss'
 
 
-const PopupConfirm = (({ changeVisitorsList, closePopup }) => {
+const PopupConfirm = ({ changeVisitorsList, closePopup }) => {
   const clickNo = () => {
     closePopup()
   }
@@ -33,8 +33,7 @@ const PopupConfirm = (({ changeVisitorsList, closePopup }) => {
         </button>
       </div>
     </div>
-
   )
-})
+}
 
 export default PopupConfirm

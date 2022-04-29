@@ -1,6 +1,6 @@
 import { data } from '../utils/data'
 
-const getIndex = (card) => {
+const getCardData = (card) => {
   const eventsList = JSON.parse(localStorage.getItem('eventsList'))
   const cardIndex = eventsList.findIndex(c => c.id === +card.id)
   return { eventsList, cardIndex }
@@ -9,7 +9,7 @@ const getIndex = (card) => {
 
 // popup <- form: EventItem
 export const addVisitor = (card, newVisitor) => {
-  const { eventsList, cardIndex } = getIndex(card)
+  const { eventsList, cardIndex } = getCardData(card)
 
   // - изм. карточку локально
   card.visitors = [...card.visitors, newVisitor]
@@ -25,7 +25,7 @@ export const addVisitor = (card, newVisitor) => {
 
 // popup <- confirm: myEvents и EventItem
 export const removeVisitor = (card) => {
-  const { eventsList, cardIndex } = getIndex(card)
+  const { eventsList, cardIndex } = getCardData(card)
 
   // - изм. карточку локально 
   const tempArr = card.visitors.filter(v => v !== data.user.name)
@@ -37,6 +37,8 @@ export const removeVisitor = (card) => {
 
   // - изм. состояние -> в список событий user'a
   data.user.myEvents = data.user.myEvents.filter(c => c.id !== card.id)
+
+  return data.user.myEvents
 }
 
 
@@ -44,6 +46,6 @@ export const removeVisitor = (card) => {
 export const getList = (initialList) => {
   return initialList.filter(card => {
     const [year, month] = card.date.split('-')
-    return (year === data.changedYear) && (+month === +data.changedMonth) && card
+    return (year === data.changedYear) && (+month === +data.changedMonth + 1) && card // янв -> 0, фев -> 1...
   })
 }

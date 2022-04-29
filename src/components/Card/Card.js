@@ -8,10 +8,10 @@ const Card = ({ card }) => {
         <h3 className='card__text'>
           {card.title}
         </h3>
-        <Link className='card__link' to={`${card.id}`}>More</Link>
+        <Link className='card__link' to={String(card.id)}>More</Link>
       </div>
 
-      <Link className='card__link-image' to={`${card.id}`}>
+      <Link className='card__link-image' to={String(card.id)}>
         <img
           className='card__image'
           src={card.image}

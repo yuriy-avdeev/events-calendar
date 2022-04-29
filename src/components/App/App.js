@@ -20,14 +20,14 @@ const App = () => {
           // console.log('update localStorage')
           localStorage.setItem('eventsList', JSON.stringify(res))
           const tempArr = res.filter(card => !!card.visitors)
-          data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
+          data.user.myEvents = tempArr.filter(card => card.visitors.includes(data.user.name))
           setLocalData(true)
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.error(err))
     } else {
       // data.user.myEvents <- не потерять данные при вводе в адресной строке 
       const tempArr = JSON.parse(localStorage.getItem('eventsList')).filter(card => !!card.visitors)
-      data.user.myEvents = tempArr.filter(c => c.visitors.includes(data.user.name))
+      data.user.myEvents = tempArr.filter(card => card.visitors.includes(data.user.name))
       setLocalData(true)
     }
   }, [])
@@ -39,14 +39,11 @@ const App = () => {
         <div className='app'>
           <Header />
           <Routes>
-            <Route path='events-calendar/' element={<Main />} />
-
-            <Route path='events-calendar/'>
+            <Route path='events-calendar' element={<Main />} />
+            <Route path='events-calendar'>
               <Route path=':id' element={<EventItem />} />
+              <Route path='my-events' element={<MyEvents />} />
             </Route>
-
-            <Route path='events-calendar/my-events' element={<MyEvents />} />
-
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </div >

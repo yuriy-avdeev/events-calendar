@@ -6,7 +6,7 @@ export const data = {
   years: ['2021', '2022'],
   months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sen', 'Oct', 'Nov', 'Dec'],
   changedYear: '',
-  changedMonth: '',
+  changedMonth: '', // янв -> 0, фев -> 1...
   user: {
     name,
     avatar,

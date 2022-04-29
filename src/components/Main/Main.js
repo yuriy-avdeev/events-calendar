@@ -26,7 +26,6 @@ const Main = () => {
         changeSelect={getRenderList} 
         shift={3}
       />
-
       {
         cardsToRender.length ?
           <div className='main__grid'>
@@ -41,7 +40,6 @@ const Main = () => {
           <h3 className='main__message'>No events this month!</h3>
       }
     </div>
-
   )
 }
 

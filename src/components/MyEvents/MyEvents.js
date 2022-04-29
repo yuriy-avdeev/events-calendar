@@ -30,7 +30,7 @@ const MyEvents = () => {
 
 
   useEffect(() => {
-    setListToRender(fullListThisMonth.slice(0, 3))
+    setListToRender(fullListThisMonth.slice(0, 2))
   }, [fullListThisMonth])
 
 
@@ -41,7 +41,7 @@ const MyEvents = () => {
 
   useEffect(() => {
     resolution.onchange = () => { // переход через 768рх
-      resolution.matches ? // >768 === true
+      resolution.matches ? // > 768 -> true
         setBigScreen(true)
         :
         setBigScreen(false)
@@ -50,7 +50,7 @@ const MyEvents = () => {
   }, [resolution])
 
 
-  const changeSelect = () => {
+  const changeFullListThisMonth = () => {
     setFullListThisMonth(getList(data.user.myEvents))
   }
 
@@ -58,9 +58,10 @@ const MyEvents = () => {
   const removeEvent = (card) => {
     if (openPopup) {
       //  click из PopupConfirm
-      removeVisitor(currentCard)
+      const list = removeVisitor(currentCard)
+      changeFullListThisMonth()
       // setListToRender -> после удаления через try/catch и async/await...
-      setListToRender(listToRender.filter(c => c.id !== currentCard.id))
+      setListToRender(list)
     } else {
       // - click из EventShortInfo
       setCurrentCard(card)
@@ -70,7 +71,7 @@ const MyEvents = () => {
 
 
   const addCardsToRender = () => {
-    const step = 1
+    const step = 2
     if (listToRender.length < fullListThisMonth.length) {
       setListToRender(
         fullListThisMonth.slice(0, (listToRender.length + step))
@@ -100,7 +101,7 @@ const MyEvents = () => {
       }
 
       <SelectArea
-        changeSelect={changeSelect}
+        changeSelect={changeFullListThisMonth}
         shift={0}
       />
 
@@ -123,7 +124,7 @@ const MyEvents = () => {
           <h4 className='my-events__message'>You have no events this month!</h4>
       }
 
-      {listToRender.length && !hiddenButton ?
+      {listToRender.length && !hiddenButton &&
         <button
           className='my-events__button'
           onClick={addCardsToRender}
@@ -131,8 +132,7 @@ const MyEvents = () => {
         >
           load more
         </button>
-        :
-        null}
+      }
     </div>
   )
 }
