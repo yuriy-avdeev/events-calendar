@@ -1,0 +1,72 @@
+@import '../../scss/variables.scss';
+
+.card {
+  width: $full-width;
+  max-width: $big-card-width;
+  height: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 24px;
+}
+
+.card__text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &-bottom {
+    margin: 24px 0 13.51px 24px;
+  }
+}
+
+.card__link {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $blue-color;
+  margin-left: 10px;
+
+  &:hover {
+    @include hover(0.8, '.3s');
+  }
+}
+
+.card__link-image {
+  position: relative;
+  height: 202px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    @include hover(0.9, '.3s');
+  }
+}
+
+.card__image {
+  width: $full-width;
+}
+
+@media screen and (min-width: 1024px) {
+  .card__text-bottom {
+    margin: 24px;
+  }
+
+  .card__link-image {
+    height: 220px;
+  }
+}
